@@ -17,6 +17,27 @@ namespace ClassLibrary
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
         /// <value><c>true</c> si las máquinas fueron encendidas, <c>false</c> en caso contrario.</value>
+
+        private static int count = 0;
+        public string id;
+
+        public Train(string id )
+        {
+            this.id = id;
+            count++;
+            Console.WriteLine('!');
+        }
+
+        ~Train()
+        {
+            count--;
+        } 
+
+        public static int GetCount()
+        {
+            return count;
+        }
+
         public bool IsEngineStarted { get; private set; }
 
         /// <summary>
